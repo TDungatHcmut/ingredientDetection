@@ -11,6 +11,8 @@ from flask_swagger_ui import get_swaggerui_blueprint
 from backend.routes import set_routes
 from backend.constants import UPLOAD_FOLDER, CSV_FOLDER, DETECTION_FOLDER, SEGMENTATION_FOLDER, METADATA_FOLDER
 
+
+
 parser = argparse.ArgumentParser('Online Food Recognition')
 parser.add_argument('--ngrok', action='store_true',
                     default=False, help="Run on local or ngrok")
@@ -32,11 +34,11 @@ if __name__ == '__main__':
 
     # Swagger UI setup
     SWAGGER_URL = '/swagger'
-    API_URL = '/swagger.json'
+    API_URL = '/static/swagger.json'
     swaggerui_blueprint = get_swaggerui_blueprint(
-        SWAGGER_URL, 
-        API_URL, 
-        config={ 
+        SWAGGER_URL,
+        API_URL,
+        config={
             'app_name': "URL Processing API"
         }
     )
