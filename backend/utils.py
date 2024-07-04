@@ -100,15 +100,51 @@ def process_webcam_capture(request):
 
 def process_url_input(request):
     """
-    Get image/video from input url
+    This function handles the process of getting an image or video from an input URL.
+
+    Parameters:
+    request (flask.Request): The request object containing the form data.
+        The form data should contain a 'url_link' field which contains the URL of the image or video.
+
+    Returns:
+    tuple: A tuple containing three elements:
+        1. filename (str): The name of the downloaded file.
+        2. filepath (str): The path of the downloaded file.
+        3. filetype (str): The type of the file ('image' or 'video').
     """
+    # Extract the URL from the form data
     url = request.form['url_link']
+
+    # Download the image or video from the URL
     filename, filepath = download(url)
+
+    # Determine the type of the file
     filetype = file_type(filename)
 
+    # Return the filename, filepath, and filetype
     return filename, filepath, filetype
 
 def process_image_file(filename, filepath, model_types, tta, ensemble, min_conf, min_iou, enhanced, segmentation):
+    """
+    This function processes an image file by applying object detection or semantic segmentation.
+
+    Parameters:
+    filename (str): The name of the input image file.
+    filepath (str): The path of the input image file.
+    model_types (str or list): The type(s) of model(s) to use for prediction.
+    tta (bool): Whether to apply test time augmentation (TTA).
+    ensemble (bool): Whether to use ensemble models.
+    min_conf (float): The minimum confidence threshold for detections.
+    min_iou (float): The minimum intersection over union (IoU) threshold for non-maximum suppression.
+    enhanced (bool): Whether to enhance the labels of detected objects.
+    segmentation (bool): Whether to perform semantic segmentation instead of object detection.
+
+    Returns:
+    tuple: A tuple containing three elements:
+        1. out_name (str): The name of the output file.
+        2. output_path (str): The path of the output file.
+        3. output_type (str): The type of the output ('image' or 'segmentation').
+    """
     # Get filename of detected image
     out_name = "Image Result"
     output_path = os.path.join(

@@ -1,0 +1,90 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "URL Processing API",
+    "version": "1.0.0",
+    "description": "API for processing URLs, webcam captures, and uploaded files"
+  },
+  "host": "localhost:5000",
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/analyze": {
+      "post": {
+        "summary": "Analyze the provided input",
+        "description": "Processes webcam captures, URL inputs, and uploaded files",
+        "parameters": [
+          {
+            "name": "webcam-button",
+            "in": "formData",
+            "type": "file",
+            "description": "Webcam capture"
+          },
+          {
+            "name": "url-button",
+            "in": "formData",
+            "type": "string",
+            "description": "URL input"
+          },
+          {
+            "name": "upload-button",
+            "in": "formData",
+            "type": "file",
+            "description": "Uploaded file"
+          },
+          {
+            "name": "threshold-range",
+            "in": "formData",
+            "type": "number",
+            "description": "Threshold range"
+          },
+          {
+            "name": "confidence-range",
+            "in": "formData",
+            "type": "number",
+            "description": "Confidence range"
+          },
+          {
+            "name": "model-types",
+            "in": "formData",
+            "type": "string",
+            "description": "Model types"
+          },
+          {
+            "name": "enhanced",
+            "in": "formData",
+            "type": "boolean",
+            "description": "Enhanced processing"
+          },
+          {
+            "name": "ensemble",
+            "in": "formData",
+            "type": "boolean",
+            "description": "Ensemble processing"
+          },
+          {
+            "name": "tta",
+            "in": "formData",
+            "type": "boolean",
+            "description": "Test-time augmentation"
+          },
+          {
+            "name": "seg",
+            "in": "formData",
+            "type": "boolean",
+            "description": "Segmentation"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful analysis"
+          },
+          "400": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    }
+  }
+}

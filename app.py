@@ -6,6 +6,7 @@ import getpass
 from flask_cors import CORS
 from flask import Flask
 from pyngrok import ngrok, conf
+from flask_swagger_ui import get_swaggerui_blueprint
 
 from backend.routes import set_routes
 from backend.constants import UPLOAD_FOLDER, CSV_FOLDER, DETECTION_FOLDER, SEGMENTATION_FOLDER, METADATA_FOLDER
@@ -28,6 +29,18 @@ if __name__ == '__main__':
     app.config['CSV_FOLDER'] = CSV_FOLDER
     app.config['DETECTION_FOLDER'] = DETECTION_FOLDER
     app.config['SEGMENTATION_FOLDER'] = SEGMENTATION_FOLDER
+
+    # Swagger UI setup
+    SWAGGER_URL = '/swagger'
+    API_URL = '/swagger.json'
+    swaggerui_blueprint = get_swaggerui_blueprint(
+        SWAGGER_URL, 
+        API_URL, 
+        config={ 
+            'app_name': "URL Processing API"
+        }
+    )
+    app.register_blueprint(swaggerui_blueprint, url_prefix=SWAGGER_URL)
 
     if args.ngrok:
         print("Enter your authtoken, which can be copied from https://dashboard.ngrok.com/get-started/your-authtoken")

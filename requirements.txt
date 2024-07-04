@@ -9,7 +9,9 @@ timm>=0.5.4
 omegaconf
 pycocotools
 gdown>=4.4.0
+flask
 flask-cors
+flask-swagger-ui
 pyngrok
 cryptography
 tabulate
