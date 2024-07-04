@@ -1,0 +1,8 @@
+LICENSE
+README.md
+setup.py
+food_recognition.egg-info/PKG-INFO
+food_recognition.egg-info/SOURCES.txt
+food_recognition.egg-info/dependency_links.txt
+food_recognition.egg-info/requires.txt
+food_recognition.egg-info/top_level.txt
