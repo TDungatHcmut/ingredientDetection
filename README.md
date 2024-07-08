@@ -2,8 +2,6 @@
 
 <p align="center">
 
-<!--  <img src="https://visitor-badge.laobi.icu/badge?page_id=lannguyen0910.food-detection-yolov5" alt="visitors" />
-  -->
  <a><img  src="./static/assets/demo/pipeline.png"></a>
   <br>
 </p>
@@ -78,7 +76,7 @@ food-detection-yolov5
 
 
 ## 📔  **Notebook**
-- For inference, use this notebook to run the web app [![Notebook](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1X06Y-HSPeHbEWtsXpyal8R1PliiVvpJq?usp=sharing)
+- For inference, use this notebook to run the web app [![Notebook](https://colab.research.google.com/drive/1GU9fJAq-AVL_fFUrB1H5NaXA7GupSnR1?usp=sharing)
 - For training, refer to these notebooks for your own training:
   -  Detection: [![Notebook](https://colab.research.google.com/assets/colab-badge.svg)](https://drive.google.com/file/d/1SywGfyfj3SVrE7VAAl3CshB9s3o8WRXL/view?usp=sharing)
   -  Classification: [![Notebook](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/11VzRR8NmJyZGJ-3obkuV0zZAlYAPhCY1?usp=sharing)
