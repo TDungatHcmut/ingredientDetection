@@ -25,7 +25,7 @@
 </a> -->
 </p>
 
-<!--
+
 ## 🌳 **Folder Structure**
 
 <details>
@@ -61,7 +61,7 @@ food-detection-yolov5
 │   └─── index.html           # upload files' page
 │   └─── url.html             # input URLs' page    
 ```
-</details> -->
+</details> 
    
 
 <details open> <summary><strong>Dev logs</strong></summary>
